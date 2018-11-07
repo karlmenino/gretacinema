@@ -1,6 +1,5 @@
 package fr.laerce.cinema;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +12,8 @@ import java.util.Comparator;
 /**
  * Created by fred on 03/02/2016.
  */
-@WebServlet(name = "liste")
-public class liste extends HttpServlet {
+@WebServlet(name = "Liste")
+public class Liste extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -37,11 +36,11 @@ public class liste extends HttpServlet {
         out.println("<ul>");
         switch (Integer.parseInt(global)) {
             case 0 :
-                Collections.sort(fd.lesFilms, new filmComparator());
+                Collections.sort(fd.lesFilms, new FilmComparator());
                 fd.lesFilms.forEach(film -> out.println("<li><a href='/info?id="+film.id+"'>"+film.titre+"</li>"));
                 break;
             case 1 :
-               Collections.sort(fd.lesFilms, Collections.reverseOrder(new filmComparator()));
+               Collections.sort(fd.lesFilms, Collections.reverseOrder(new FilmComparator()));
                fd.lesFilms.forEach(film -> out.println("<li><a href='/info?id="+film.id+"'>"+film.titre+"</li>"));
                break;
             case 2 :

@@ -10,11 +10,11 @@
     </servlet>
     <servlet>
         <servlet-name>liste</servlet-name>
-        <servlet-class>fr.laerce.cinema.liste</servlet-class>
+        <servlet-class>fr.laerce.cinema.Liste</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>info</servlet-name>
-        <servlet-class>fr.laerce.cinema.info</servlet-class>
+        <servlet-class>fr.laerce.cinema.Info</servlet-class>
     </servlet>
 
     <servlet-mapping>

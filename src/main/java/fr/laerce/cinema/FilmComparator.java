@@ -2,7 +2,7 @@ package fr.laerce.cinema;
 
 import java.util.Comparator;
 
-public class filmComparator implements Comparator<Film> {
+public class FilmComparator implements Comparator<Film> {
     @Override
     public int compare(Film o1, Film o2) {
 

@@ -12,6 +12,11 @@
         <servlet-name>liste</servlet-name>
         <servlet-class>fr.laerce.cinema.liste</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>info</servlet-name>
+        <servlet-class>fr.laerce.cinema.info</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>affiche</servlet-name>
         <url-pattern>/affiche</url-pattern>
@@ -19,5 +24,9 @@
     <servlet-mapping>
         <servlet-name>liste</servlet-name>
         <url-pattern>/liste</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>info</servlet-name>
+        <url-pattern>/info</url-pattern>
     </servlet-mapping>
 </web-app>

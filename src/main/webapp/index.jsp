@@ -15,11 +15,11 @@
         <br>
         <input type="radio" id="global3"
                name="global" value="2">
-        <label for="global3">liste film note croissant :</label>
+        <label for="global3">liste film par classement croissant :</label>
         <br>
         <input type="radio" id="global3"
                name="global" value="3">
-        <label for="global3">liste film note decroissant :</label>
+        <label for="global3">liste film par classement decroissant :</label>
         <br>
         <button type="submit">Envoyer</button>
 </form>

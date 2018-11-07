@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created by fred on 03/02/2016.
@@ -24,6 +25,7 @@ public class liste extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         FilmsDonnees fd = new FilmsDonnees();
+        String global = request.getParameter("global");
         out.println("<!DOCTYPE html>");
         out.println("<html>");
         out.println("<head>");
@@ -32,8 +34,24 @@ public class liste extends HttpServlet {
         out.println("<body>");
         out.println("<h1>les film<h1>");
         out.println("<ul>");
-        Collections.sort(fd.lesFilms, new filmComparator());
-        fd.lesFilms.forEach(film -> out.println("<li><a href='/affiche?id="+film.id+"'>"+film.titre+"</li>"));
+        switch (Integer.parseInt(global)) {
+            case 0 :
+                Collections.sort(fd.lesFilms, new filmComparator());
+                fd.lesFilms.forEach(film -> out.println("<li><a href='/affiche?id="+film.id+"'>"+film.titre+"</li>"));
+                break;
+            case 1 :
+               Collections.sort(fd.lesFilms, Collections.reverseOrder(new filmComparator()));
+               fd.lesFilms.forEach(film -> out.println("<li><a href='/affiche?id="+film.id+"'>"+film.titre+"</li>"));
+               break;
+            case 2 :
+                Collections.sort(fd.lesFilms, Collections.reverseOrder(Comparator.comparingDouble(o -> o.note)));
+                fd.lesFilms.forEach(film -> out.println("<li><a href='/affiche?id="+film.id+"'>"+film.titre+"</li>"));
+                break;
+            case 3 :Collections.sort(fd.lesFilms, Comparator.comparingDouble(o -> o.note));
+                fd.lesFilms.forEach(film -> out.println("<li><a href='/affiche?id="+film.id+"'>"+film.titre+"</li>"));
+                break;
+        }
+
 
         out.println("</ul>");
         out.println("</body>");

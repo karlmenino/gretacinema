@@ -3,6 +3,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
-<h2>truc bidon</h2>
+<h2>PROJET CINEMA</h2>
 </body>
 </html>

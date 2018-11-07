@@ -38,18 +38,18 @@ public class liste extends HttpServlet {
         switch (Integer.parseInt(global)) {
             case 0 :
                 Collections.sort(fd.lesFilms, new filmComparator());
-                fd.lesFilms.forEach(film -> out.println("<li><a href='/affiche?id="+film.id+"'>"+film.titre+"</li>"));
+                fd.lesFilms.forEach(film -> out.println("<li><a href='/info?id="+film.id+"'>"+film.titre+"</li>"));
                 break;
             case 1 :
                Collections.sort(fd.lesFilms, Collections.reverseOrder(new filmComparator()));
-               fd.lesFilms.forEach(film -> out.println("<li><a href='/affiche?id="+film.id+"'>"+film.titre+"</li>"));
+               fd.lesFilms.forEach(film -> out.println("<li><a href='/info?id="+film.id+"'>"+film.titre+"</li>"));
                break;
             case 2 :
                 Collections.sort(fd.lesFilms, Collections.reverseOrder(Comparator.comparingDouble(o -> o.note)));
-                fd.lesFilms.forEach(film -> out.println("<li><a href='/affiche?id="+film.id+"'>"+film.titre+"</li>"));
+                fd.lesFilms.forEach(film -> out.println("<li><a href='/info?id="+film.id+"'>"+film.titre+"</li>"));
                 break;
             case 3 :Collections.sort(fd.lesFilms, Comparator.comparingDouble(o -> o.note));
-                fd.lesFilms.forEach(film -> out.println("<li><a href='/affiche?id="+film.id+"'>"+film.titre+"</li>"));
+                fd.lesFilms.forEach(film -> out.println("<li><a href='/info?id="+film.id+"'>"+film.titre+"</li>"));
                 break;
         }
 

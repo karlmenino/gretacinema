@@ -25,7 +25,7 @@ public class info extends HttpServlet {
                 out.println("<title>info de "+film.afficheNom+"</title>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>+"film.afficheNom+"<h1>");
+                out.println("<h1>"+film.afficheNom+"<h1>");
                 out.println("<ul>");
                 out.println("</html>");
 

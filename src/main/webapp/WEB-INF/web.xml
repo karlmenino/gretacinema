@@ -16,6 +16,10 @@
         <servlet-name>info</servlet-name>
         <servlet-class>fr.laerce.cinema.Info</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Session</servlet-name>
+        <servlet-class>fr.laerce.cinema.Session</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>affiche</servlet-name>
@@ -28,5 +32,9 @@
     <servlet-mapping>
         <servlet-name>info</servlet-name>
         <url-pattern>/info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Session</servlet-name>
+        <url-pattern>/Session</url-pattern>
     </servlet-mapping>
 </web-app>

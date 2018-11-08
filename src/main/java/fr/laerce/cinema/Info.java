@@ -44,7 +44,7 @@ public class Info extends HttpServlet {
                 out.println("<body>");
                 out.println("<h1>"+film.titre+"<h1>");
                 out.println("<img height='150' width='150' src='/affiche?id="+id+"'></img>");
-            out.println("<img height='150' width='150' src='public/ben-hur.jpg'></img>");
+                out.println("<img height='150' width='150' src='public/ben-hur.jpg'></img>");
                 out.println("<h2>la note de ce film est "+film.note+"<h2>");
                 out.println("</html>");
 

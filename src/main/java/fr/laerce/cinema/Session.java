@@ -8,14 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @WebServlet(name = "Session")
 public class Session extends HttpServlet {
 
-    private HashMap bdd;
-
+    ArrayList<Utilisateur> liste=new ArrayList<>();
     public void init() {
+        Utilisateur bob = new Utilisateur("bob", "marley" );
+        liste.add(bob);
     }
 
 
@@ -27,22 +29,22 @@ public class Session extends HttpServlet {
         String login =  request.getParameter("login");
         String pass = request.getParameter("pass");
 
-        String co="connecté";
-        String noco="invité";
-//            if (bdd.containsKey(login) && bdd.containsValue(pass)) {
-//                session.setAttribute("user",co  );
-//            }
-//            else{ session.setAttribute("user", noco ); }
+        boolean co=false;
+
+
             PrintWriter out = response.getWriter();
-//                ServletContext cntx= getServletContext();
-//                String filename = cntx.getRealPath("WEB-INF/datas/affiches/"+film.afficheNom);
+            for (Utilisateur u : liste) {
+                if (u.login==login && u.pass==pass){
+                    HttpSession session = request.getSession(true);
+                }
+            }
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<title>Info de connexion</title>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>"+login+pass+bdd.containsKey("bob")+"<h1>");
+                out.println("<h1>co<h1>");
                 out.println("</body>");
                 out.println("</html>");
         }

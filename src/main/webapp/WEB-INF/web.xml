@@ -5,6 +5,10 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>C:\Users\CDI\Pictures\affiches\</param-value>
+    </context-param>
     <servlet>
         <servlet-name>affiche</servlet-name>
         <servlet-class>fr.laerce.cinema.Affiche</servlet-class>
@@ -21,7 +25,6 @@
         <servlet-name>Session</servlet-name>
         <servlet-class>fr.laerce.cinema.Session</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>affiche</servlet-name>
         <url-pattern>/affiche</url-pattern>
@@ -39,6 +42,5 @@
         <url-pattern>/Session</url-pattern>
     </servlet-mapping>
 </web-app>
-
 
 

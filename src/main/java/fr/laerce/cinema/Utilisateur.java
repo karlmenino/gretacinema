@@ -5,11 +5,9 @@ public class Utilisateur {
     public String pass;
     public String ip;
     public boolean co;
-    public Utilisateur(String log,String pass,String ip,Boolean co) {
+    public Utilisateur(String log,String pass) {
         log=login;
         this.pass=pass;
-        this.ip=ip;
-        this.co=co;
     }
 
 

@@ -16,6 +16,7 @@ import java.io.OutputStream;
  */
 @WebServlet(name = "Affiche")
 public class Affiche extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -28,7 +29,7 @@ public class Affiche extends HttpServlet {
 
         ServletContext cntx= getServletContext();
         // Chemin absolu de l'image
-        String url= getServletContext().getInitParameter("url");
+        String url= getInitParameter("url");
         String filename =url+film.afficheNom;
         // Type mime associé à l'image d'après le nom de fichier
         String mime = cntx.getMimeType(filename);

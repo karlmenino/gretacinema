@@ -1,14 +1,14 @@
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
 <h2>PROJET CINEMA</h2>
-    <form action="/Session" method="get">
+    <form action="/Session" method="post">
         <p>
-            <label for="login">connection</label>
-            <input type="text" id="login" placeholder="login" required="required" name="login"/>
-            <input type="text" id="pass" placeholder="pass" required="required" name="pass"/>
+            <input type="text"  placeholder="login" required="required" name="login"/>
+            <input type="text" placeholder="pass" required="required" name="pass"/>
             <button type="submit" action="/info">Envoyer</button>
         </p>
     </form>

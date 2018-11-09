@@ -5,13 +5,29 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
-    <context-param>
-        <param-name>url</param-name>
-        <param-value>C:\Users\CDI\Pictures\affiches\</param-value>
-    </context-param>
+    <!--<context-param>-->
+        <!--<param-name>url</param-name>-->
+        <!--<param-value>C:\Users\CDI\Pictures\affiches\</param-value>-->
+    <!--</context-param>-->
+    <!--<context-param>-->
+        <!--<param-name>confPath</param-name>-->
+        <!--<param-value>/WEB-INF/urlrewrite.xml</param-value>-->
+    <!--</context-param>-->
+    <filter>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>affiche</servlet-name>
         <servlet-class>fr.laerce.cinema.Affiche</servlet-class>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>C:\Users\CDI\Pictures\affiches\</param-value>
+        </init-param>
     </servlet>
     <servlet>
         <servlet-name>liste</servlet-name>
@@ -41,6 +57,7 @@
         <servlet-name>Session</servlet-name>
         <url-pattern>/Session</url-pattern>
     </servlet-mapping>
+
 </web-app>
 
 

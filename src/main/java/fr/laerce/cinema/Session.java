@@ -16,7 +16,6 @@ public class Session extends HttpServlet {
     private HashMap bdd;
 
     public void init() {
-        Utilisateur bob = new
     }
 
 
@@ -27,7 +26,7 @@ public class Session extends HttpServlet {
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login =  request.getParameter("login");
         String pass = request.getParameter("pass");
-        HttpSession session = request.getSession();
+
         String co="connecté";
         String noco="invité";
 //            if (bdd.containsKey(login) && bdd.containsValue(pass)) {
@@ -43,7 +42,8 @@ public class Session extends HttpServlet {
                 out.println("<title>Info de connexion</title>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>"+session.getAttribute("user")+login+pass+bdd.containsKey("bob")+"<h1>");
+                out.println("<h1>"+login+pass+bdd.containsKey("bob")+"<h1>");
+                out.println("</body>");
                 out.println("</html>");
         }
     }

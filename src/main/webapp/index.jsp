@@ -1,10 +1,13 @@
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
 <h2>PROJET CINEMA</h2>
+<c:if test="${sessionScope.get('connection')!= true }">
     <form action="/Session" method="post">
         <p>
             <input type="text"  placeholder="login" required="required" name="login"/>
@@ -12,6 +15,8 @@
             <button type="submit" action="/info">Envoyer</button>
         </p>
     </form>
+</c:if>
+<c:if test="${sessionScope.get('connection')== true }">
         <form action="/liste" method="get">
             <input checked type="radio" id="global1" name="global" value="0">
             <label for="global1">liste film alphabetique croissant :</label>
@@ -34,5 +39,6 @@
                 <button type="submit" action="/info">Envoyer</button>
             </p>
         </form>
+</c:if>
 </body>
 </html>

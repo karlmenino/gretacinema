@@ -1,4 +1,4 @@
-# Cinema version statique #
+# Cinema version jsp #
 
 Gérer la liste des films
 

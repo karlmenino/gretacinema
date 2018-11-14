@@ -10,9 +10,14 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Liste de film</title>
 </head>
 <body>
-
+<h1>les film</h1>
+<ul>
+<c:forEach items="${liste}" var="film">
+    <li><a href='/info?id=${film.id}'>${film.titre}</a></li>
+</c:forEach>
+</ul>
 </body>
 </html>

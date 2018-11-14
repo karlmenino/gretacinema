@@ -36,6 +36,11 @@ public class FilmsDonnees {
         return film;
     }
 
+    public List<Film> getLesFilms() {
+        return lesFilms;
+    }
 
-
+    public void setLesFilms(List<Film> lesFilms) {
+        this.lesFilms = lesFilms;
+    }
 }

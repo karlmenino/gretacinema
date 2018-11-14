@@ -9,12 +9,12 @@
 
 -->
 <urlrewrite>
-    <rule>
-        <note>
-        </note>
-        <from>/info</from>
-        <to type="forward">/info?id=1</to>
-    </rule>
+    <!--<rule>-->
+        <!--<note>-->
+        <!--</note>-->
+        <!--<from>/info</from>-->
+        <!--<to type="forward">/info?id=1</to>-->
+    <!--</rule>-->
 
     <rule>
         <note>

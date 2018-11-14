@@ -9,10 +9,15 @@
     <url>http://maven.apache.org</url>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet.jsp.jstl</groupId>-->
+            <!--<artifactId>javax.servlet.jsp.jstl-api</artifactId>-->
+            <!--<version>1.2.2</version>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>javax.servlet.jsp.jstl</groupId>
-            <artifactId>javax.servlet.jsp.jstl-api</artifactId>
-            <version>1.2.2</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
         </dependency>
         <dependency>
             <groupId>org.tuckey</groupId>

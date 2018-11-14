@@ -8,11 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
+
 <html>
 <head>
-    <title>Title</title>
+    <title>Info de ${film.titre}</title>
 </head>
 <body>
+<h1>${film.titre}</h1>
+<img height='150' width='150' src="/affiche?id=${film.id}">
+<h2>la note de ce film est ${film.note} </h2>
+<a href='/Session' type='button'>acceuil</a>
 
 </body>
 </html>

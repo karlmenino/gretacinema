@@ -7,16 +7,17 @@
 </head>
 <body>
 <h2>PROJET CINEMA</h2>
+
 <c:if test="${sessionScope.get('connection')!= true }">
     <form action="/Session" method="post">
         <p>
             <input type="text"  placeholder="login" required="required" name="login"/>
-            <input type="text" placeholder="pass" required="required" name="pass"/>
+            <input type="password" placeholder="pass" required="required" name="pass"/>
             <button type="submit" action="/info">Envoyer</button>
         </p>
     </form>
 </c:if>
-<c:if test="${sessionScope.get('connection')== true }">
+<%--<c:if test="${sessionScope.get('connection')== true }">--%>
         <form action="/liste" method="get">
             <input checked type="radio" id="global1" name="global" value="0">
             <label for="global1">liste film alphabetique croissant :</label>
@@ -32,13 +33,13 @@
             <br>
             <button type="submit">Envoyer</button>
         </form>
-        <form action="/info" method="post">
+        <form action="/liste" method="post">
             <p>
                 <label for="recherche">recherche :</label>
                 <input type="text" id="recherche" name="name"/>
                 <button type="submit" action="/info">Envoyer</button>
             </p>
         </form>
-</c:if>
+<%--</c:if>--%>
 </body>
 </html>

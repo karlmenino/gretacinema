@@ -28,44 +28,51 @@ public class Session extends HttpServlet {
         String login = request.getParameter("login");
         String pass = request.getParameter("pass");
         HttpSession session = request.getSession();
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Info de connexion</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>co<h1>");
+//        PrintWriter out = response.getWriter();
+//        out.println("<!DOCTYPE html>");
+//        out.println("<html>");
+//        out.println("<head>");
+//        out.println("<title>Info de connexion</title>");
+//        out.println("</head>");
+//        out.println("<body>");
+//        out.println("<h1>co<h1>");
         for (Utilisateur u : liste) {
             //                if (session.getAttribute("user") == null) {
             //                    session.setAttribute("connection",true);
             //                }
-            if (u.login.equals(login) && u.pass.equals(pass)) session.setAttribute("user", u);
+            if (u.login.equals(login) && u.pass.equals(pass)) {
+                session.setAttribute("user", u);
+                session.setAttribute("connection", true);
+            }
         }
-        out.println("<a href='/Session' type='button'>acceuil method='get'</a> ");
-        out.println("</body>");
-        out.println("</html>");
+//        out.println("<a href='/Session' type='button'>acceuil method='get'</a> ");
+//        out.println("</body>");
+//        out.println("</html>");
+        response.sendRedirect("/Session");
     }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        HttpSession session = request.getSession(true);
-        Utilisateur u = (Utilisateur) session.getAttribute("user");
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Info de connexion</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>liste des films vue par" + u.login + "<h1>");
-        for (Film f : u.film) {
-            out.println("<h2>" + f.titre + "<h2>");
-        }
-        out.println("<a href='/index.jsp' type='button'>acceuil</a> ");
-        out.println("</body>");
-        out.println("</html>");
+//        PrintWriter out = response.getWriter();
+//        HttpSession session = request.getSession(true);
+//        Utilisateur u = (Utilisateur) session.getAttribute("user");
+//        out.println("<!DOCTYPE html>");
+//        out.println("<html>");
+//        out.println("<head>");
+//        out.println("<title>Info de connexion</title>");
+//        out.println("</head>");
+//        out.println("<body>");
+//        out.println("<h1>liste des films vue par" + u.login + "<h1>");
+//        for (Film f : u.film) {
+//            out.println("<h2>" + f.titre + "<h2>");
+//        }
+//        out.println("<a href='/index.jsp' type='button'>acceuil</a> ");
+//        out.println("</body>");
+//        out.println("</html>");
+        String jspview = "session.jsp";
+        getServletConfig().getServletContext().getRequestDispatcher("/WEB-INF/jsp/"+jspview).forward(request, response);
     }
+
 }
 
 

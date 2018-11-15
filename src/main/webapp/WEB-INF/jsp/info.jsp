@@ -15,7 +15,7 @@
 </head>
 <body>
 <h1>${film.titre}</h1>
-<img height='150' width='150' src="/affiche?id=${film.id}">
+<img height='150' width='150' src="/affiche/${film.id}">
 <h2>la note de ce film est ${film.note} </h2>
 <a href='/Session' type='button'>acceuil</a>
 

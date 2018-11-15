@@ -16,7 +16,7 @@
 <h1>liste des films vue par ${sessionScope.get("user").login}</h1>
 <ul>
     <c:forEach items="${sessionScope.get('user').film}" var="film">
-        <li><a href='/info?id=${film.id}'>${film.titre}</a></li>
+        <li><a href='/info/${film.id}'>${film.titre}</a></li>
     </c:forEach>
 </ul>
 <a href='/index.jsp' type='button'>acceuil</a>

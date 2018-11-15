@@ -47,7 +47,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>liste</servlet-name>
-        <url-pattern>/liste</url-pattern>
+        <url-pattern>/liste/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>info</servlet-name>

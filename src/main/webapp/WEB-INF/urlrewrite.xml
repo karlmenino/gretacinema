@@ -9,13 +9,24 @@
 
 -->
 <urlrewrite>
-    <!--<rule>-->
-        <!--<note>-->
-        <!--</note>-->
-        <!--<from>/info</from>-->
-        <!--<to type="forward">/info?id=1</to>-->
-    <!--</rule>-->
-
+    <rule>
+        <note>
+        </note>
+        <from>^/info/(.*)$</from>
+        <to type="forward">/info?id=$1</to>
+    </rule>
+    <rule>
+    <note>
+    </note>
+    <from>^/liste/(.*)$</from>
+    <to type="forward">/liste?global=$1</to>
+</rule>
+    <rule>
+        <note>
+        </note>
+        <from>^/affiche/(.*)$</from>
+        <to type="forward">/affiche?id=$1</to>
+    </rule>
     <rule>
         <note>
             The rule means that requests to /test/status/ will be redirected to /rewrite-status
@@ -24,10 +35,10 @@
         <from>/test/status/</from>
         <to type="redirect">%{context-path}/rewrite-status</to>
     </rule>
-    <rule>
-        <from>/liste?global=0</from>
-        <to type="forward">/liste</to>
-    </rule>
+    <!--<rule>-->
+        <!--<from>/liste?global=0</from>-->
+        <!--<to type="forward">/liste</to>-->
+    <!--</rule>-->
 
     <outbound-rule>
         <note>
